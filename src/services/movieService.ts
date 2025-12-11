@@ -11,13 +11,16 @@ export interface MoviesResponse {
   total_results: number;
 }
 
-export const fetchMovies = async (query: string): Promise<MoviesResponse> => {
+export const fetchMovies = async (
+  query: string,
+  page: number = 1
+): Promise<MoviesResponse> => {
   const response = await axios.get<MoviesResponse>(`${BASE_URL}/search/movie`, {
     params: {
       query,
       include_adult: false,
       language: "en-US",
-      page: 1,
+      page,
     },
     headers: {
       Authorization: `Bearer ${token}`,
