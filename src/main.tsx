@@ -5,15 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "modern-normalize/modern-normalize.css";
 import App from "./components/App/App";
 
-const queryClient = new QueryClient({
-  // defaultOptions: {
-  //   queries:{
-  //     retry: 1,
-  //     refetchOnWindowFocus: false,
-  //     staleTime: 5 * 60 * 1000,
-  //   },
-  // },
-});
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
