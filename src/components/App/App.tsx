@@ -20,6 +20,7 @@ export default function App() {
     queryKey: ["movies", query, page],
     queryFn: () => fetchMovies(query, page),
     enabled: query.length > 0,
+    placeholderData: (previousData) => previousData,
   });
 
   useEffect(() => {
